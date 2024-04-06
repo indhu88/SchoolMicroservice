@@ -1,0 +1,31 @@
+@Builder - to create buiilder class for particular class to create oblect in ease, reducae the boilerplate code, enchance the readbility of java code
+
+ex:
+@Builder
+public class Person {
+  private String name;
+  private int age;
+  private String address;
+
+  public static void main(String[] args) {
+    Person person = Person.builder()
+      .name("John Doe")
+      .age(30)
+      .address("123 Main Street")
+      .build();
+
+    System.out.println(person);
+  }
+}
+@Builder
+@Value
+public class Person {
+  private String name;
+  private int age;
+  private String address;
+}
+
+
+@Value annotation is used to make class as immutable. once person object is created cant able to change the value of fields.
+
+Both are available in com.lombok
