@@ -7,7 +7,7 @@ import com.indhu.student.entity.StudentEntity;
 
 public interface StudentServiceImpl {
 	
-	void addStudent(StudentEntity entity);
+	StudentEntity addStudent(StudentEntity entity);
 	List<StudentDto> getAllStudents();
 	List<StudentDto>  getAllStudentsBySchoolId(Integer schoolId);
 

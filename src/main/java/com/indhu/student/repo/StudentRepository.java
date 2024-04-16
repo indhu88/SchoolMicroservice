@@ -12,4 +12,6 @@ import com.indhu.student.entity.StudentEntity;
 public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
 
 	List<StudentDto> findAllStudentsBySchoolId(Integer schoolId);
+    boolean existsByEmailId(String emailId);
+
 }

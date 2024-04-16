@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.indhu.student.dto.StudentDto;
 import com.indhu.student.entity.StudentEntity;
+import com.indhu.student.exception.DuplicateIdException;
 import com.indhu.student.repo.StudentRepository;
 import com.indhu.student.serviceImpl.StudentServiceImpl;
 
@@ -24,9 +25,12 @@ public class StudentService implements StudentServiceImpl {
 	
 
 	@Override
-	public void addStudent(StudentEntity entity) {
-		
-		studentRepo.save(entity);
+	public StudentEntity addStudent(StudentEntity entity) {
+        if (studentRepo.existsByEmailId(entity.getEmailId())) {
+            throw new DuplicateIdException("Email Id " + entity.getEmailId() + " already exists");
+        }
+
+		return studentRepo.save(entity);
 	}
 	@Override
 	public List<StudentDto> getAllStudents() {
