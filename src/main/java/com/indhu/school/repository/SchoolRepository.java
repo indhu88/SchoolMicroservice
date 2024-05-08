@@ -7,6 +7,8 @@ import com.indhu.school.entity.SchoolEntity;
 
 @Repository
 public interface SchoolRepository extends JpaRepository<SchoolEntity, Integer> {
-    boolean existsByEmail(String emailId);
+  //  boolean existsByEmail(String emailId);
+    boolean existsByNameOrEmail(String name,String emailId);
+
 
 }

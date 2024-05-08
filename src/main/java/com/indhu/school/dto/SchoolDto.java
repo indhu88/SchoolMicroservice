@@ -2,11 +2,17 @@ package com.indhu.school.dto;
 
 import java.util.List;
 
-public record SchoolDto(Integer id, String schoolName,String emailId,List<Student> students) {   
-	// Non-private no-argument constructor
-	public SchoolDto() {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SchoolDto{
 	
-    this(0, null,null,null); // Explicit invocation to the canonical constructor
-
-} 
+	private int id;
+	private String schoolName;
+	private String email;
+	private List<Student> students;
 }
+
