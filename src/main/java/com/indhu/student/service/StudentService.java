@@ -26,6 +26,8 @@ public class StudentService implements StudentServiceImpl {
 
 	@Override
 	public StudentEntity addStudent(StudentEntity entity) {
+		
+		
         if (studentRepo.existsByEmailId(entity.getEmailId())) {
             throw new DuplicateIdException("Email Id " + entity.getEmailId() + " already exists");
         }
@@ -35,9 +37,12 @@ public class StudentService implements StudentServiceImpl {
 	@Override
 	public List<StudentDto> getAllStudents() {
 		 List<StudentEntity> studentList = studentRepo.findAll();
-	        return studentList.stream().map((studenten) -> mapper.map(studenten, StudentDto.class))
-	                .collect(Collectors.toList());
-	        
+			System.out.println("values"+studentList);
+			List<StudentDto> studentDtoList = studentList.stream().map((studenten) -> mapper.map(studenten, StudentDto.class))
+            .collect(Collectors.toList());
+			System.out.println("values1"+studentDtoList);
+
+	         return studentDtoList;
 	       
 
 	}

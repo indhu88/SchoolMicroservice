@@ -23,7 +23,7 @@ public class StudentEntity {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	@NotBlank(message = "Please provide a valid first name")
 	@Size(min=2,message="Atleast First Name  u have minimum 2 letters")
 	private String firstName;

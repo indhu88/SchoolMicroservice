@@ -20,7 +20,7 @@ import com.indhu.student.service.StudentService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/v1/students")
+@RequestMapping("api/v1")
 @Validated
 public class StudentController {
 	
@@ -38,9 +38,8 @@ public class StudentController {
 
 	}
 	
-	@GetMapping
+	@GetMapping("/all_students")
 	public ResponseEntity<List<StudentDto>> getStudentList(){
-		
 		return ResponseEntity.ok(service.getAllStudents());
 		
 	}

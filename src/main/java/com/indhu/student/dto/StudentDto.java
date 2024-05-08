@@ -1,11 +1,21 @@
 package com.indhu.student.dto;
 
-public record StudentDto(Integer id, String firstName, String lastName,String emailId) {   
-	// Non-private no-argument constructor
-	public StudentDto() {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//public record StudentDto(Integer id,String firstName,String lastName,String emailId) {
+//
+//}
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class StudentDto{
 	
-    this(0, null,null,null); // Explicit invocation to the canonical constructor
-
-} 
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String emailId;
+	
 }
-

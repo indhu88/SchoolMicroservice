@@ -9,7 +9,7 @@ import com.indhu.student.dto.StudentDto;
 import com.indhu.student.entity.StudentEntity;
 
 @Repository
-public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
+public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
 
 	List<StudentDto> findAllStudentsBySchoolId(Integer schoolId);
     boolean existsByEmailId(String emailId);
